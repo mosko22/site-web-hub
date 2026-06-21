@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专题 · 开云 · 自然与构建的交界</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f6fbfa;
+      color: #1e2b2b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .magazine {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* 首页横幅 — 杂志大标题区 */
+    .hero {
+      background: linear-gradient(135deg, #e4f3f0 0%, #cde8e3 100%);
+      border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+      padding: 4rem 2rem 3.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 24px rgba(30, 75, 70, 0.08);
+      text-align: center;
+      border: 1px solid rgba(70, 130, 120, 0.15);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      color: #0b3b36;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #2f5f59;
+      max-width: 680px;
+      margin: 1rem auto 0.8rem auto;
+      font-weight: 350;
+    }
+
+    .hero .meta-line {
+      display: inline-block;
+      background: rgba(45, 95, 88, 0.08);
+      padding: 0.3rem 1.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #2d635d;
+      letter-spacing: 0.3px;
+    }
+
+    /* 背景说明：杂志专题栏 */
+    .background-note {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 16px rgba(50, 100, 90, 0.04);
+      border-left: 8px solid #5d9b92;
+      font-size: 1.02rem;
+    }
+
+    .background-note p {
+      margin-bottom: 0.8rem;
+    }
+
+    .background-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 网格卡片 — 三段自然介绍 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 2rem 1.6rem 2.2rem 1.6rem;
+      box-shadow: 0 6px 18px rgba(40, 85, 78, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+      border: 1px solid #d9ece7;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(50, 110, 100, 0.08);
+      border-color: #9fcbc3;
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+      color: #3a7a71;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 450;
+      color: #12423c;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      color: #2c4743;
+      font-size: 0.98rem;
+      flex: 1;
+    }
+
+    .card .tag {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: #e4f1ee;
+      color: #1d5b53;
+      padding: 0.2rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      align-self: flex-start;
+    }
+
+    /* 杂志页尾 — 访问提示 */
+    .footer-note {
+      background: #e0f0ec;
+      border-radius: 2.5rem;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      margin-top: 2.2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #b8d9d1;
+      font-size: 1.05rem;
+    }
+
+    .footer-note p {
+      margin-bottom: 0.4rem;
+      color: #1d4943;
+    }
+
+    .footer-note .link-sentence {
+      background: #ffffffd9;
+      display: inline-block;
+      padding: 0.4rem 2rem;
+      border-radius: 60px;
+      margin-top: 0.6rem;
+      border: 1px solid #9cc5bd;
+      backdrop-filter: blur(2px);
+    }
+
+    .footer-note a {
+      color: #04584d;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #2b7a6e;
+      padding-bottom: 0.05rem;
+      transition: border-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      border-bottom-width: 2px;
+      color: #023d35;
+    }
+
+    /* 移动端适应性 */
+    @media (max-width: 820px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+
+      .hero {
+        padding: 2.8rem 1.2rem 2.4rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .card {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .footer-note {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .background-note {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    /* 极简版权 — 仅杂志标识 */
+    .colophon {
+      text-align: center;
+      color: #759d96;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      margin-top: 1rem;
+    }
+
+    .colophon span {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+<div class="magazine">
+
+  <!-- 横幅 hero -->
+  <div class="hero">
+    <h1>开云 · 边界</h1>
+    <div class="sub">当自然纹理与人的构造彼此渗透，一种温和的秩序浮现出来。</div>
+    <div class="meta-line">专题 · 生态与营造 · 2025</div>
+  </div>
+
+  <!-- 背景说明：破题 -->
+  <div class="background-note">
+    <p>从字面到隐喻，「开云」意味着遮蔽消散、视野展开。在自然与人工的交汇处，许多事物既保留了原本的形态，又接受了新的梳理。本专题无意定义什么，只是记录那些在开放中重新获得形状的片段。</p>
+    <p>无论是山坡上的步道、建筑立面上的藤蔓，还是社区里共同维护的庭院，<strong>开云</strong>的状态往往出现在刻意与放任之间。它是光线穿过枝叶投下的斑驳，也是人们为日常留出的缝隙。</p>
+  </div>
+
+  <!-- 网格卡片：三段自然介绍 -->
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h3>从植被到肌理</h3>
+      <p>覆盖与裸露相互交替。石墙上的苔藓不是装饰，而是时间参与构造的证据。当材料允许环境附着，建筑便不只是庇护所，也是基质。</p>
+      <span class="tag">生长</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌀</div>
+      <h3>气流的路径</h3>
+      <p>走廊的转角、窗扇的开口、院落的布局——空气的流动被有意引导，但不被完全控制。微气候的调节往往来自对风向的顺应，而非对抗。</p>
+      <span class="tag">通透</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌿</div>
+      <h3>公共的“间隙”</h3>
+      <p>城市中那些未被严格定义的空地，常常成为最生动的场所。人们自发地在台阶上坐下、在树荫下交谈。这些间隙不属于任何计划，却承载了最多的日常。</p>
+      <span class="tag">自发性</span>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示：自然嵌入链接 -->
+  <div class="footer-note">
+    <p>谈论这些主题时，我们总会回到同一个名字——它并非品牌或平台，而是一种视角的集合。</p>
+    <div class="link-sentence">
+      若你希望进一步了解这种思路如何融入项目与讨论，不妨在安静的时候看看 <a href="https://site-web-ky.com">开云</a> 所汇集的内容。
+    </div>
+    <p style="margin-top: 0.8rem; font-size: 0.92rem; color: #2e635b;">专题文章 · 持续更新</p>
+  </div>
+
+  <div class="colophon">
+    <span>✦ 杂志专题 · 独立视角 ✦</span>
+  </div>
+</div>
+</body>
+</html>
