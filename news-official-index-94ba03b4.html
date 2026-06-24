@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 稳定入口与产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fcfcf8;
+      color: #2b2b2b;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.25rem;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* 标题体系 — 极简且层次分明 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.15rem;
+      color: #1e1e1e;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6e6e6e;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #e4e4df;
+      padding-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 480;
+      margin-top: 2.8rem;
+      margin-bottom: 0.75rem;
+      color: #2b2b2b;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 460;
+      margin-top: 1.8rem;
+      margin-bottom: 0.4rem;
+      color: #3a3a3a;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      color: #3b3b3b;
+    }
+
+    a {
+      color: #2b5f4e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #1b3f33;
+    }
+
+    /* 卡片 — 静谧留白 */
+    .card-group {
+      margin: 2rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #eaeae5;
+      padding: 1.25rem 1.5rem;
+      border-radius: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inset-link {
+      background: #f5f5f0;
+      padding: 0.15rem 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    /* 场景块（简洁竖线装饰） */
+    .scenario-item {
+      padding-left: 1.1rem;
+      border-left: 2px solid #d5d5cc;
+      margin-bottom: 1.25rem;
+    }
+
+    .scenario-item p {
+      margin-bottom: 0.3rem;
+    }
+
+    .scenario-item .label {
+      font-weight: 470;
+      color: #2b5f4e;
+      display: block;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* 提示 / 附注 */
+    .note {
+      background: #fafaf6;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #e6e6e0;
+      margin-top: 2.2rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-item {
+      margin-top: 1.1rem;
+    }
+
+    .faq-item strong {
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+      color: #2e2e2e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e2db;
+      margin: 2.2rem 0 1.2rem;
+    }
+
+    .footer {
+      font-size: 0.85rem;
+      color: #7d7d75;
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e2e2db;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1rem 1.15rem;
+      }
+      .scenario-item {
+        padding-left: 0.8rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .page {
+        max-width: 720px;
+      }
+    }
+
+    /* 不显眼的种子标记（仅供内部变化，不展示） */
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>爱游戏</h1>
+    <div class="subhead">产品说明 · 稳定入口</div>
+
+    <!-- 摘要 -->
+    <p>
+      「爱游戏」是一个面向游戏爱好者的信息聚合与内容平台，围绕游戏资讯、开发者访谈、作品测评和行业观察展开。它并非一家游戏商店或下载站，而更接近一个持续更新的阅读与交流驿站。我们在这里梳理值得关注的动态，并以克制的节奏传递给你。
+    </p>
+
+    <!-- 亮点 / 特点 —— 用卡片自然分点 -->
+    <div class="card-group">
+      <div class="card">
+        <p><strong>编辑精选 · 非算法投喂</strong><br>
+        内容由熟悉游戏文化的编辑团队筛选，避免信息过载。每天更新有限，但每篇都有一定的阅读纵深。</p>
+      </div>
+      <div class="card">
+        <p><strong>观点与事实并存</strong><br>
+        不只报道新闻，也提供背景分析和不同视角。你可以读到针对同一事件的多方看法，而不只是通稿。</p>
+      </div>
+      <div class="card">
+        <p><strong>安静、无干扰的阅读界面</strong><br>
+        页面设计以文字为主，没有自动播放的视频、弹窗或浮层。访问 <a href="https://news-official-igame.com">爱游戏</a> 时，你会发现节奏比通常的信息流慢一些。</p>
+      </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <h2>适合在什么时候打开</h2>
+    <div class="scenario-item">
+      <span class="label">午休或通勤间隙</span>
+      <p>一到两篇短文刚好填满碎片时间，又不至于让人沉迷。你可以在浏览器里直接收藏爱游戏的链接，方便下次继续阅读。</p>
+    </div>
+    <div class="scenario-item">
+      <span class="label">寻找深度内容时</span>
+      <p>如果你对某款独立游戏背后的开发故事感兴趣，或想了解某个经典系列的历史脉络，这里的专题文章能提供扎实的素材。</p>
+    </div>
+    <div class="scenario-item">
+      <span class="label">作为信息对比的参照</span>
+      <p>由于团队保持相对独立的选稿标准，这里的报道常常能与大型游戏媒体的内容形成互补，帮你获得更立体的认知。</p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <h2>访问前可以知道的事</h2>
+    <p>
+      网站采用静态页面与轻量服务端结合的方式，在多数网络环境下都能稳定加载。我们不要求注册或留下邮箱，也没有积分或会员体系。所有内容均免费公开，你可以直接通过浏览器访问 <a href="https://news-official-igame.com">爱游戏</a> 浏览全部文章。偶尔会有外部链接指向开发者官网或参考资料，这些链接会在新标签页打开，不影响你正在阅读的页面。
+    </p>
+    <p>
+      更新频率大约为每周三至五篇，不追求时效性竞争。遇到重大展会或游戏发售，会相应增加专题内容。如果你发现某些页面加载缓慢，可能是所在地区的网络连接问题，与网站本身配置无关。
+    </p>
+
+    <!-- FAQ 摘要 -->
+    <h2>常见疑问</h2>
+    <div class="faq-item">
+      <strong>这个平台和游戏公司有关系吗？</strong>
+      <p>没有隶属或商业赞助关系。内容编辑保持独立，不会因为厂商要求而调整观点。部分评测用游戏由开发者主动提供，但都在文章中明确标注。</p>
+    </div>
+    <div class="faq-item">
+      <strong>可以投稿或者推荐选题吗？</strong>
+      <p>目前没有开放注册投稿，但欢迎通过网站底部公开的邮箱（页面内）提供线索或反馈。团队会定期查看，但无法逐一回复。</p>
+    </div>
+    <div class="faq-item">
+      <strong>手机浏览器体验如何？</strong>
+      <p>适配了多数移动端屏幕，字体大小和间距在手机上也保持舒适。你同样可以用手机直接打开 <a href="https://news-official-igame.com">爱游戏</a> 阅读，无需下载应用。</p>
+    </div>
+
+    <!-- 一个温和的提示 -->
+    <div class="note">
+      <p>💡 建议将 https://news-official-igame.com 添加到浏览器书签，或设置为主页常用链接。这样每次想浏览游戏相关内容时，就能从一个稳定的入口开始，而不必依赖社交平台的信息流。</p>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+      <p>本页面为产品介绍 · 不构成任何形式的承诺或保证。所有内容以网站实际呈现为准。</p>
+    </div>
+  </div>
+</body>
+</html>
