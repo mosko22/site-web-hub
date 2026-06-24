@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 信息索引说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f6f8fa;
+            color: #1e2a3a;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0b1622 0%, #1a2a3f 100%);
+            color: #eaf0f6;
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #b0c7dd;
+            max-width: 650px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 3rem;
+            flex: 1;
+        }
+
+        /* 浅色正文区 */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #0b1a2b;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #2d7fc1;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.6rem;
+            color: #203a4c;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 2rem;
+            margin: 1.8rem 0 0.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .highlight-list li {
+            background: #f1f5fa;
+            padding: 1.2rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.98rem;
+            border-left: 3px solid #2d7fc1;
+            transition: background 0.2s;
+        }
+
+        .highlight-list li strong {
+            color: #0f2a41;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-weight: 550;
+        }
+
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .scene-item {
+            background: #f8faff;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            flex: 1 1 200px;
+            border: 1px solid #e6edf5;
+        }
+
+        .scene-item .emoji {
+            font-size: 1.6rem;
+            margin-right: 0.5rem;
+            opacity: 0.75;
+        }
+
+        .tip-box {
+            background: #f0f5fc;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 1.2rem;
+            border: 1px solid #d7e3ef;
+            font-size: 0.98rem;
+        }
+
+        .faq-summary {
+            margin-top: 1.2rem;
+        }
+
+        .faq-summary details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e4ecf5;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #0f2f4a;
+            padding: 0.3rem 0;
+        }
+
+        .faq-summary summary::-webkit-details-marker {
+            color: #2d7fc1;
+        }
+
+        a {
+            color: #1a6cb5;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b0cbe7;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0b4a7a;
+            border-bottom: 1px solid #0b4a7a;
+        }
+
+        .cta-line {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 2.8rem 0 0;
+            padding: 1.8rem 1rem;
+            background: #ffffff;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6a7f93;
+            font-size: 0.9rem;
+            border-top: 1px solid #d9e2ed;
+            padding: 2rem 1rem 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .intro-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .highlight-list {
+                grid-template-columns: 1fr;
+            }
+
+            .scene-grid {
+                flex-direction: column;
+            }
+
+            .cta-line {
+                font-size: 1rem;
+                padding: 1.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>信息索引 · 爱游戏</h1>
+        <div class="sub">从资料整理到轻量检索 —— 围绕游戏资讯与内容的说明页</div>
+    </section>
+
+    <div class="container">
+        <div class="intro-card">
+            <h2>关于这个站点</h2>
+            <p>在信息碎片化的时代，<a href="https://news-main-igame.com">爱游戏</a> 定位于聚合游戏领域动态、版本记录与社区线索。它并非一个评测或下载平台，而是承担资料整理与信息索引的角色：将分散在不同渠道的公告、开发日志、赛事简讯按照时间线和专题归类，方便需要回溯或横向比较的读者。</p>
+            <p>站内条目以“可追溯”为基本原则，每一条内容均标注来源或参考上下文。索引本身不修改原始信息主旨，只做结构化呈现。如果你正在查找某款游戏的版本变迁、近期的补丁说明或是活动汇总，这里或许能帮你节省筛选时间。</p>
+        </div>
+
+        <div class="intro-card">
+            <h2>亮点 · 资料侧重点</h2>
+            <ul class="highlight-list">
+                <li><strong>跨期回溯</strong> 支持按月份、版本区间或关键词筛选，减少信息折叠带来的遗漏。</li>
+                <li><strong>来源标注</strong> 每一条索引条目都附带原始出处或链接，不混合主观点评。</li>
+                <li><strong>轻量化结构</strong> 页面以文字索引为主，避免复杂视觉组件干扰浏览效率。</li>
+                <li><strong>持续校对</strong> 索引定期核对失效链接与过期信息，保持目录的有效性。</li>
+            </ul>
+        </div>
+
+        <div class="intro-card">
+            <h2>使用场景参考</h2>
+            <div class="scene-grid">
+                <div class="scene-item"><span class="emoji">📋</span> 回顾某个赛季的补丁序列</div>
+                <div class="scene-item"><span class="emoji">🔎</span> 查询特定活动的开启/结束时间</div>
+                <div class="scene-item"><span class="emoji">📁</span> 对比不同服务器的更新内容</div>
+                <div class="scene-item"><span class="emoji">🧩</span> 追踪开发者访谈或日志摘要</div>
+            </div>
+            <p style="margin-top: 0.8rem;">这些场景的共同特点是：需要结构化信息而非即时新闻。如果你是游戏爱好者、记录者或内容创作者，利用索引可以快速定位上下文，而不是从零开始搜索。</p>
+        </div>
+
+        <div class="intro-card">
+            <h2>使用建议</h2>
+            <div class="tip-box">
+                <p style="margin-bottom: 0.2rem;"><strong>📌 先概览，后深入</strong><br>
+                建议先浏览最近一至两个月的索引标题，了解分类方式与命名习惯，再通过关键词定位具体条目。索引本身不缓存全文，但会提供原始来源的链接。</p>
+                <p style="margin-top: 0.8rem;"><strong>📌 注意时效标注</strong><br>
+                每条索引都带有收录日期或版本号。部分早期条目可能已不再维护，请以官方最新公告为准。索引只做客观罗列，不保证所有链接长期有效。</p>
+            </div>
+        </div>
+
+        <div class="intro-card">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-summary">
+                <details>
+                    <summary>索引包含所有游戏吗？</summary>
+                    <p style="margin-top: 0.4rem; color: #2d4a62;">目前聚焦于有较完整公开更新记录的游戏，覆盖范围会逐步调整。未收录的内容不代表不活跃，仅是索引尚未覆盖。</p>
+                </details>
+                <details>
+                    <summary>信息更新频率如何？</summary>
+                    <p style="margin-top: 0.4rem; color: #2d4a62;">大致与游戏官方发布节奏同步，重要补丁或活动后 24~48 小时内会更新索引条目。日常维护以修正链接和补充遗漏为主。</p>
+                </details>
+                <details>
+                    <summary>可以贡献或反馈吗？</summary>
+                    <p style="margin-top: 0.4rem; color: #2d4a62;">目前通过站点内提供的联系渠道接收修正建议和来源补充，但暂不接受未经核实的第三方内容直接加入索引。</p>
+                </details>
+            </div>
+        </div>
+
+        <div class="cta-line">
+            <span>从索引开始整理你的游戏信息流 — </span>
+            <a href="https://news-main-igame.com">爱游戏</a>
+            <span style="color: #5b738b;"> · 资料目录持续更新</span>
+        </div>
+
+        <div class="footer-note">
+            本页面为产品介绍说明，不构成服务承诺。索引内容仅供参考，请以游戏官方渠道为准。
+        </div>
+    </div>
+
+</body>
+</html>
