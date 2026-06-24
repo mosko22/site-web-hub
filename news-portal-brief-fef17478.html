@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 资讯与查询</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1e2f3a;
+      line-height: 1.6;
+      padding: 0 1.2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 0 3rem;
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: 3.2rem 1rem 2.8rem;
+      background: linear-gradient(145deg, #e0f2f0 0%, #d9eee8 100%);
+      border-radius: 32px;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 12px 28px rgba(20, 100, 90, 0.08);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0f4b44;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0.6rem auto 0;
+      color: #2d5c54;
+      font-size: 1.2rem;
+      font-weight: 380;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: #157a6e;
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      margin-top: 0.8rem;
+    }
+
+    /* 网格卡片 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin: 2.4rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.6rem 1.5rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 40, 35, 0.04);
+      border: 1px solid #dcece8;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      border-color: #9fcbc2;
+      box-shadow: 0 8px 20px rgba(20, 110, 95, 0.07);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1a655b;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .card h3::before {
+      content: "▹";
+      color: #2e9b8a;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .card p {
+      color: #2f4b45;
+      font-size: 0.96rem;
+    }
+
+    /* 说明区 (inline 卡片) */
+    .insight {
+      background: #e3f3ef;
+      border-radius: 28px;
+      padding: 2rem 2rem 2rem 2.2rem;
+      margin: 2.4rem 0;
+      border-left: 6px solid #1f8a7a;
+    }
+
+    .insight h2 {
+      font-size: 1.7rem;
+      font-weight: 480;
+      color: #09453d;
+      margin-bottom: 0.8rem;
+    }
+
+    .insight p {
+      color: #1c4d44;
+      margin-bottom: 0.9rem;
+      max-width: 780px;
+    }
+
+    .insight a {
+      color: #0b6b5d;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #69b3a6;
+      font-weight: 500;
+    }
+
+    .insight a:hover {
+      color: #044d42;
+      text-decoration-color: #044d42;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem 2rem 2.2rem;
+      margin: 2.6rem 0 2rem;
+      border: 1px solid #d0e6e0;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.5rem;
+      font-weight: 480;
+      color: #145b50;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+      border-bottom: 1px dashed #d2e6e0;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 520;
+      color: #044e43;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 1.04rem;
+    }
+
+    .faq-a {
+      color: #30554d;
+      font-size: 0.95rem;
+      padding-left: 0.8rem;
+      border-left: 3px solid #b5d9d0;
+      margin-top: 0.2rem;
+    }
+
+    .faq-a a {
+      color: #127a6a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 底部 */
+    .footer-note {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 0 0.8rem;
+      border-top: 1px solid #cbdfd9;
+      text-align: center;
+    }
+
+    .footer-note p {
+      font-size: 0.9rem;
+      color: #3b6259;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-note a {
+      color: #0b6b5d;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* 移动端 */
+    @media (max-width: 720px) {
+      body {
+        padding: 0 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .insight {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .faq-summary {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .hero {
+        padding: 2rem 0.8rem;
+        border-radius: 24px;
+      }
+
+      .card {
+        padding: 1.2rem 1rem;
+      }
+
+      .faq-q {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>爱游戏 · 日常查询与延伸</h1>
+    <p>从资讯对照到背景阅读，一个更专注的轻量信息入口。</p>
+    <span class="tag">知识型 · 参照</span>
+  </div>
+
+  <!-- 优势网格 (日常查询 & 对照) -->
+  <div class="grid-2">
+    <div class="card">
+      <h3>查询与速览</h3>
+      <p>覆盖游戏动态、版本变迁、活动日历，适合每天花几分钟浏览关键更新。不堆砌信息，条目式展示，便于后续查阅。</p>
+    </div>
+    <div class="card">
+      <h3>对照与关联</h3>
+      <p>将同类资讯、跨平台消息并置呈现，辅助横向比较。从一条短讯延伸至背景解读，减少在多个页面跳转的负担。</p>
+    </div>
+    <div class="card">
+      <h3>延伸阅读</h3>
+      <p>每则内容附带轻量的拓展注解：历史版本、开发者说明、社区讨论摘要。适合想了解“为什么”和“然后呢”的读者。</p>
+    </div>
+    <div class="card">
+      <h3>无干扰结构</h3>
+      <p>界面克制，卡片与网格划分清晰。蓝绿色点缀帮助视线定位，避免过度装饰。移动端阅读同样舒适。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：从日常角度展开 -->
+  <div class="insight">
+    <h2>从一条消息开始</h2>
+    <p>当你看到一则游戏新闻或版本预告，可能想确认更多细节：这个调整在之前版本有过吗？其他平台是否同步？社区反馈如何？<strong>爱游戏</strong> 的设计初衷正是围绕这些日常查询场景——它不是一个资讯聚合器，而是一个轻量的参照系。</p>
+    <p>例如，你可以在 <a href="https://news-portal-igame.com">爱游戏</a> 快速比对活动时间线，或顺着一条短讯找到关联的更新说明。页面不追求覆盖所有信息，而是让每次查看都能自然衔接下一步。</p>
+    <p>从查询到对照，再到延伸阅读，整个过程都在同一界面完成——不需要打开多个标签页反复搜索。这也是“日常使用”的另一种含义：让信息检索回归轻量和直接。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见疑问摘要</h2>
+
+    <div class="faq-item">
+      <span class="faq-q">每天更新的内容类型有哪些？</span>
+      <div class="faq-a">主要涵盖版本公告、活动日程、开发日志节选和社区摘要。每条内容都会附上来源或延伸链接，方便进一步了解。</div>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">可以查到过往的版本记录吗？</span>
+      <div class="faq-a">部分历史资讯以条目形式保留在关联索引中，你可以通过页面内的对照模块回溯。如需更系统的存档，建议配合官方文档使用。</div>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">页面是否支持 RSS 或订阅？</span>
+      <div class="faq-a">目前以直接访问为主，后续会根据使用反馈考虑轻量订阅方式。当前你可以将 <a href="https://news-portal-igame.com">爱游戏</a> 加入浏览器书签，方便日常查看。</div>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-q">资讯来源可靠吗？</span>
+      <div class="faq-a">所有条目均整理自公开信息、开发者公告或可信渠道。页面本身不做二次解读，仅作客观呈现与关联对照，帮助你自己判断。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-note">
+    <p>以查询和对照为线索，延伸阅读的起点。</p>
+    <p><a href="https://news-portal-igame.com">爱游戏</a></p>
+    <p style="margin-top: 0.5rem; color: #5b7f76; font-size: 0.8rem;">日常参照 · 轻量资讯</p>
+  </div>
+
+</div>
+</body>
+</html>
